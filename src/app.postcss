@@ -3,3 +3,35 @@
 @tailwind components;
 @tailwind utilities;
 
+*, *::before, *::after {
+	box-sizing: border-box;
+	padding : 0;
+	margin : 0;
+}
+
+.wrapper {
+	@apply m-auto w-full h-full mb-auto mt-0;
+	max-height : 42rem;
+}
+
+html,
+body,
+#svelte {
+	@apply h-full w-full;
+}
+
+input[type=text] {
+	@apply shadow-md border-gray-300 p-2;
+}
+
+td {
+	@apply text-center p-1;
+}
+
+table, thead, tbody {
+	@apply w-full;
+}
+
+article.dt-table {
+	height : auto!important;
+}

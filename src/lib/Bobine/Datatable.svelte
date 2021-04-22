@@ -1,13 +1,15 @@
 <script>
     import { Datatable, rows } from 'svelte-simple-datatables'
-
-    export let data = []
+    import Icon from 'fa-svelte'
+    import { faPlayCircle } from '@fortawesome/free-solid-svg-icons/faPlayCircle'
+    import { faEdit } from '@fortawesome/free-solid-svg-icons/faEdit'
+    import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash'
 
     export let settings = {
         sortable: true,
         pagination: true,
         scrollY: true,
-        rowPerPage: 25,
+        rowPerPage: 15,
         columnFilter: true,
         css: false,
         labels: {
@@ -24,9 +26,15 @@
             paginationRowCount: true,
         }
     }
+
+    export let bobines = []
+
+    function deleteBobine (idBobine) {
+        console.log(`suppression bobine : ${idBobine}`)
+    }
 </script>
 
-<Datatable {settings} {data}>
+<Datatable {settings} bind:data={bobines}>
     <thead>
         <th data-key="reference">Réference</th>
         <th data-key="matiere">Matiere</th>
@@ -34,6 +42,7 @@
         <th data-key="stock">Stock</th>
         <th data-key="prix">Prix</th>
         <th data-key="photoPath">PhotoPath</th>
+        <th></th>
         <th></th>
         <th></th>
     </thead>
@@ -46,8 +55,9 @@
             <td>{bobine.stock}</td>
             <td>{bobine.prix}</td>
             <td>{bobine.photoPath}</td>
-            <td><button>btn 1</button></td>
-            <td><button>btn 2</button></td>
+            <td><button><a href={`/bobine/simulate/${bobine.idBobine}`}><Icon icon={faPlayCircle} /></a></button></td>
+            <td><button><a href={`/bobine/edit/${bobine.idBobine}`}><Icon icon={faEdit} /></a></button></td>
+            <td><button on:click={() => deleteBobine(bobine.idBobine)}><Icon icon={faTrash} /></button></td>
         </tr>
     {/each}
     </tbody>
