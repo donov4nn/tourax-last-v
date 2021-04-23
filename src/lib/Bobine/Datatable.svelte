@@ -57,8 +57,20 @@
             <td><img src={bobine.photoPath} alt={bobine.reference} /></td>
             <td><button><a href={`/bobine/simulate/${bobine.idBobine}`}><Icon icon={faPlayCircle} /></a></button></td>
             <td><button><a href={`/bobine/edit/${bobine.idBobine}`}><Icon icon={faEdit} /></a></button></td>
-            <td><button on:click={() => deleteBobine(bobine.idBobine)}><Icon icon={faTrash} /></button></td>
+            <td class="trash"><button on:click={() => deleteBobine(bobine.idBobine)}><Icon icon={faTrash} /></button></td>
         </tr>
     {/each}
     </tbody>
 </Datatable>
+
+<style style lang="postcss">
+    img {
+        @apply m-auto;
+        max-width: 2rem;
+    }
+
+    a {
+        @apply p-0;
+        display : unset;
+    }
+</style>

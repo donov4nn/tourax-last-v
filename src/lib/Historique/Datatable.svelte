@@ -58,7 +58,7 @@
             <td>{calcul.nombreDeBobines}</td>
             <td>{calcul.poidsTotal}</td>
             <td><button on:click={() => exportToPdf(calcul)}><Icon icon={faFilePdf} /></button></td>
-            <td><button on:click={() => deleteCalcul(calcul.idCalcul)}><Icon icon={faTrash} /></button></td>
+            <td class="trash"><button on:click={() => deleteCalcul(calcul.idCalcul)}><Icon icon={faTrash} /></button></td>
         </tr>
     {/each}
     </tbody>

@@ -5,7 +5,6 @@
 </script>
 
 <div in:fade class="wrapper">
-    <button><a href="/bobine/new">Nouvelle bobine</a></button>
     <BobineTable bobines={$bobines} />
 </div>
 
