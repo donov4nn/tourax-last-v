@@ -6,6 +6,10 @@
     import {calculs} from '$lib/Calcul/store.js'
 </script>
 
+<svelte:head>
+	<title>Calcul</title>
+</svelte:head>
+
 <div in:fade class="wrapper">
     <CableForm bind:cable={$cable} />
     <CalculTable calculs={$calculs} />

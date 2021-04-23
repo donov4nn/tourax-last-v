@@ -5,6 +5,6 @@
 <form>
     <div>
         <label for="diametre">Diamètre</label>
-        <input type="text" bind:value={cable.diametre}>
+        <input placeholder="Diamètre" type="text" bind:value={cable.diametre}>
     </div>
 </form>

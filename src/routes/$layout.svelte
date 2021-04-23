@@ -1,6 +1,9 @@
 <script>
 	import "../app.postcss"
+	let w
 </script>
+
+
 
 <nav>
 	<ul>

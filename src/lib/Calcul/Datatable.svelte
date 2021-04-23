@@ -1,4 +1,5 @@
 <script>
+    import {historique} from '$lib/Historique/store.js'
     import { Datatable, rows } from 'svelte-simple-datatables'
     import Icon from 'fa-svelte'
     import { faSave } from '@fortawesome/free-solid-svg-icons/faSave'
@@ -9,7 +10,7 @@
         scrollY: true,
         rowPerPage: 15,
         columnFilter: true,
-        css: false,
+        css: true,
         labels: {
             search: 'Recherche...',
             filter: 'Filtre',
@@ -28,7 +29,7 @@
     export let calculs = []
 
     function saveCalcul (calcul) {
-        console.log("Sauvegarde du calcul : ", calcul)
+        $historique.push(calcul)
     }
 </script>
 

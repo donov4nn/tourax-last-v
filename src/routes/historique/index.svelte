@@ -4,6 +4,10 @@
     import {historique} from '$lib/Historique/store.js'
 </script>
 
+<svelte:head>
+	<title>Historique</title>
+</svelte:head>
+
 <div in:fade class="wrapper">
     <HistoriqueTable historique={$historique} />
 </div>

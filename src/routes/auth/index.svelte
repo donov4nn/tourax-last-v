@@ -1,4 +1,5 @@
 <script>
+    import {fade} from 'svelte/transition'
     let username, password
 
     async function handleSubmit() {
@@ -17,14 +18,14 @@
     }
 </script>
 
-<form on:submit|preventDefault={handleSubmit}>
+<form on:submit|preventDefault={handleSubmit} in:fade>
     <div>
         <label for="username">Identifiant</label>
-        <input id="username" type="text" bind:value={username}>
+        <input placeholder="Identifiant" id="username" type="text" bind:value={username}>
     </div>
     <div>
         <label for="password">Mot de passe</label>
-        <input id="password" type="password" bind:value={password}>
+        <input placeholder="Mot de passe" id="password" type="password" bind:value={password}>
     </div>
     <button type="submit">Connexion</button>
 </form>

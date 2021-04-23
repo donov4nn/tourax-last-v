@@ -10,7 +10,7 @@
         scrollY: true,
         rowPerPage: 15,
         columnFilter: true,
-        css: false,
+        css: true,
         labels: {
             search: 'Recherche...',
             filter: 'Filtre',
