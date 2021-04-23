@@ -10,7 +10,7 @@
 }
 
 .wrapper {
-	@apply m-auto w-full h-full mb-auto mt-0;
+	@apply m-auto w-full h-full mb-auto mt-0 flex flex-col;
 	max-height : 42rem;
 }
 
@@ -20,7 +20,7 @@ body,
 	@apply h-full w-full;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
 	@apply shadow-md border-gray-300 p-2;
 }
 
@@ -34,4 +34,46 @@ table, thead, tbody {
 
 article.dt-table {
 	height : auto!important;
+}
+
+form {
+	@apply w-full;
+}
+
+form div, form button[type=submit] {
+	@apply flex align-middle justify-between max-w-md m-auto pb-2;
+}
+
+h1 {
+	@apply w-full text-center;
+}
+
+ul {
+	@apply flex list-none w-full justify-center align-middle h-full;
+}
+
+a {
+	@apply no-underline p-3 h-full block;
+	color : inerhit;
+}
+
+main, nav, ul {
+	@apply w-full;
+}
+
+main {
+	@apply flex flex-row p-6 flex-wrap;
+	height : calc(100% - 3rem);
+}
+
+nav {
+	@apply h-12;
+}
+
+li {
+	@apply w-1/3 text-center text-blue-300 shadow-lg uppercase pt-1 h-full rounded-sm;
+}
+
+button:not(td button) {
+	@apply p-0.5 bg-blue-400;
 }

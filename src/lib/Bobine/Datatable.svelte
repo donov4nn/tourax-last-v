@@ -41,7 +41,7 @@
         <th data-key="poids">Poids</th>
         <th data-key="stock">Stock</th>
         <th data-key="prix">Prix</th>
-        <th data-key="photoPath">PhotoPath</th>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>
@@ -54,7 +54,7 @@
             <td>{bobine.poids}</td>
             <td>{bobine.stock}</td>
             <td>{bobine.prix}</td>
-            <td>{bobine.photoPath}</td>
+            <td><img src={bobine.photoPath} alt={bobine.reference} /></td>
             <td><button><a href={`/bobine/simulate/${bobine.idBobine}`}><Icon icon={faPlayCircle} /></a></button></td>
             <td><button><a href={`/bobine/edit/${bobine.idBobine}`}><Icon icon={faEdit} /></a></button></td>
             <td><button on:click={() => deleteBobine(bobine.idBobine)}><Icon icon={faTrash} /></button></td>

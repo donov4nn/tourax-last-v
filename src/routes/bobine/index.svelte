@@ -8,3 +8,9 @@
     <button><a href="/bobine/new">Nouvelle bobine</a></button>
     <BobineTable bobines={$bobines} />
 </div>
+
+<style style lang="postcss">
+    button {
+        @apply ml-auto mr-auto;
+    }
+</style>
